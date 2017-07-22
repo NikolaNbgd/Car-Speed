@@ -1,0 +1,12 @@
+
+/*.car:last-child{
+	border-bottom: none;
+}
+.car:nth-child(3n){
+	border-right: none;
+}*/
+img{
+	width: 350px;
+	height: 250px;
+	display: block;
+}
