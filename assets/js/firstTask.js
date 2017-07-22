@@ -7,7 +7,8 @@ var jsonRequest = new XMLHttpRequest();
 jsonRequest.open('GET', 'data.json');
 jsonRequest.onreadystatechange = function () {
 	var ourData = JSON.parse(jsonRequest.responseText);
-	//Call renderData function
+
+	//Calling renderData function
 	renderData(ourData);
 }
 
@@ -20,11 +21,12 @@ function renderData(data) {
 
 	//Loop for passing through all data
 	for (i = 0; i < data.cars.length; i++) {
-				var carString = '<div class="col-sm-4">';
+				carString += '<div class="car">';
+				carString += '<article>';
 				carString += '<img src="'+data.cars[i].image+'">';
 				carString += '<p>'+data.cars[i].name+'</p>';
+				carString += '<article>';
 				carString += '</div>';
 		}
-		
 	car_blocks.insertAdjacentHTML('beforeend', carString);
 }
