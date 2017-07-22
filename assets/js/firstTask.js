@@ -1,28 +1,26 @@
 //Variable in which we will append data
-var car_blocks = document.getElementById('cars');
+var carBlocks = document.getElementById('cars');
 
 //Ajax call
 var jsonRequest = new XMLHttpRequest();
-jsonRequest.open('GET', 'data.json');
+jsonRequest.open('POST', 'data.json');
 jsonRequest.onload = function () {
 	var ourData = JSON.parse(jsonRequest.responseText);
-	
-	//Call renderData function
-	renderData(ourData);
+	renderHTML(ourData);
 }
-
 jsonRequest.send();
 
 	
-function renderData(data) {
+function renderHTML(data) {
 
 	//An empty string in which we will store data 
 	var carString = "";
 
 	//Loop for passing through all data
 	for (i = 0; i < data.length; i++) {
-		carString += '<p>'+data.cars.name[i]+'</p>';
+		carString += '<p>'+data[i].cars.name+'</p>';
 	}
 
-	car_blocks.insertAdjacentHTML('beforeend',carString);
+	carBlocks.insertAdjacentHTML('beforeend',carString);
+
 }
