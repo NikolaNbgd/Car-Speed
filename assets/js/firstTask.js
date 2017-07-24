@@ -1,17 +1,16 @@
 
 //Variable in which we will append data
 var car_blocks = document.getElementById('cars');
-
-//Ajax call
-var jsonRequest = new XMLHttpRequest();
-jsonRequest.open('GET', 'data.json');
-jsonRequest.onreadystatechange = function () {
-	var ourData = JSON.parse(jsonRequest.responseText);
-	//Call renderData function
-	renderData(ourData);
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+    if (xhr.readyState == XMLHttpRequest.DONE) {
+    	var ourData = JSON.parse(xhr.responseText);
+        console.log(ourData);
+        renderData(ourData);
+    }
 }
-
-jsonRequest.send();
+xhr.open('GET', 'data.json', true);
+xhr.send(null);
 
 function renderData(data) {
 
@@ -20,11 +19,11 @@ function renderData(data) {
 
 	//Loop for passing through all data
 	for (i = 0; i < data.cars.length; i++) {
-				var carString = '<div class="col-sm-4">';
-				carString += '<img src="'+data.cars[i].image+'">';
-				carString += '<p>'+data.cars[i].name+'</p>';
-				carString += '</div>';
-		}
+		carString += '<div class="col-sm-4">';
+		carString += '<img src="'+data.cars[i].image+'">';
+		carString += '<p>'+data.cars[i].name+'</p>';
+		carString += '</div>';
+	}
 		
 	car_blocks.insertAdjacentHTML('beforeend', carString);
 }
