@@ -24,9 +24,14 @@ function renderData(data) {
 	for (i = 0; i < data.cars.length; i++) {
 		carString += '<div class="col-sm-4 car">';
 		carString += '<a href="#">';
+		carString += '<div class="face">';
 		carString += '<img src="'+data.cars[i].image+'">';
 		carString += '<p>'+data.cars[i].name+'</p>';
-		carString += '</a>'
+		carString += '</div>';
+		carString +=  '<div class="back face center">';
+    	carString +=  '<p>This is nice for exposing more information about an image.</p>';
+  		carString += '</div>';
+		carString += '</a>';
 		carString += '</div>';
 	}
 
