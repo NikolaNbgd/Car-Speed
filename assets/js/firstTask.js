@@ -22,16 +22,21 @@ function renderData(data) {
 
 	//Loop for passing through all data
 	for (i = 0; i < data.cars.length; i++) {
-		carString += '<div class="col-sm-4 car">';
-		carString += '<a href="#">';
-		carString += '<div class="face">';
-		carString += '<img src="'+data.cars[i].image+'">';
-		carString += '<p>'+data.cars[i].name+'</p>';
-		carString += '</div>';
-		carString +=  '<div class="back face center">';
-    	carString +=  '<p>This is nice for exposing more information about an image.</p>';
-  		carString += '</div>';
-		carString += '</a>';
+		carString += '<div class="col-sm-6 col-md-4 car">';
+			carString += '<a href="#" class="card">';
+				// Default div
+				carString += '<div class="faces front">';
+					carString += '<img src="'+data.cars[i].image+'">';
+					carString += '<p>'+data.cars[i].name+'</p>';
+				carString += '</div>';
+				// Div on hover
+				carString += '<div class="faces back">';
+					carString += '<img src="'+data.cars[i].image+'">';
+					carString += '<p class="description">'+data.cars[i].description+'</p>';
+					carString += '<span>Max speed : '+data.cars[i].speed+' km/h</span>';
+				carString += '</div>';
+
+			carString += '</a>'
 		carString += '</div>';
 	}
 
