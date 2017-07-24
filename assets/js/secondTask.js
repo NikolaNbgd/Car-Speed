@@ -5,7 +5,7 @@ $(document).ready(function () {
 
     $('#cars .car').each(function (index) {
     	if (!index) return;
-    	$(this).find('p').each(function () {
+    	$(this).find('.front p').each(function () {
     		var id = $(this).text().toLowerCase().trim();
     		var not_found = (id.indexOf(value) == -1);
     		$(this).closest('.car').toggle(!not_found);
