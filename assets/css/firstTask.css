@@ -1,11 +1,8 @@
-body{
-	margin-top: 10px;
-}
 .car{
 	border-bottom:1px solid #34ACAF;
 	border-right: 1px solid #34ACAF;
 	text-align: center;
-	padding: 20px;
+	padding: 30px;
 }
 .car:last-child{
 	border-bottom: none;
@@ -24,22 +21,17 @@ body{
 	overflow: hidden;
 	text-decoration: none;
 }
-.car span{
-	display: block;
-	background: #0072BB;
-	font-weight: bold;
-	padding: 10px 0;
-	color: #fff;
-	margin-bottom: 0px;
-}
 .car p{
 	background: #0072BB;
 	padding: 10px 0;
+	margin-bottom: 0px;
 	color:#fff;
-	font-weight: bold;
 	text-transform: uppercase;
+	font-weight: bold;
 }
 img{
+	width: 300px;
+	height: 200px;
     display: block;
     margin: 0 auto;
 }
