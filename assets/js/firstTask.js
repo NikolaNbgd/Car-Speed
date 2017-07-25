@@ -2,11 +2,11 @@
 //Variable in which we will append data
 var car_blocks = document.getElementById('cars');
 
+//Static json.data Ajax call
 var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
     if (xhr.readyState == XMLHttpRequest.DONE) {
     	var ourData = JSON.parse(xhr.responseText);
-        console.log(ourData);
         renderData(ourData);
     }
 
@@ -14,6 +14,7 @@ xhr.onreadystatechange = function() {
 xhr.open('GET', 'data.json', true);
 xhr.send(null);
 
+//Function which render json data into div with id cars
 function renderData(data) {
 
 	//An empty string in which we will store data 
@@ -29,5 +30,6 @@ function renderData(data) {
 		carString += '</div>';
 	}
 
+	//Inserting data in HTML page
 	car_blocks.insertAdjacentHTML('beforeend', carString);
 }
