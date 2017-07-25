@@ -12,7 +12,7 @@ xhr.onreadystatechange = function() {
 
 }
 xhr.open('GET', 'data.json', true);
-xhr.send(null);
+xhr.send();
 
 //Function which render json data into div with id cars
 function renderData(data) {
@@ -24,8 +24,8 @@ function renderData(data) {
 	for (i = 0; i < data.cars.length; i++) {
 		carString += '<div class="col-sm-6 col-md-4 car">';
 			carString += '<a href="#">';
-					carString += '<img src="'+data.cars[i].image+'">';
-					carString += '<p>'+data.cars[i].name+'</p>';
+			carString += '<img src="'+data.cars[i].image+'">';
+			carString += '<p>'+data.cars[i].name+'</p>';
 			carString += '</a>'
 		carString += '</div>';
 	}
