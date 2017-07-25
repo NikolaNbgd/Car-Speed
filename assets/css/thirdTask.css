@@ -1,75 +1,158 @@
-.card{
-  width: 100%;
+body{
+  margin-top: 20px
+}
+.car{
+  border-bottom:1px solid #34ACAF;
+  border-right: 1px solid #34ACAF;
+  text-align: center;
+  padding: 20px;
+}
+.car:last-child{
+  border-bottom: none;
+}
+
+.car:nth-child(3n){
+  border-right: none;
+}
+.car:nth-child(4n){
+  border-bottom: none;
+}
+img{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    height: 170px;
+}
+
+#search_input{
+  width: 600px;
+  max-width: 90%;
+  margin: 0px auto 30px;
+}
+#search_input input{
+  border:2px solid #90afc5;
+  box-shadow: none;
+  border-right: none;
+  color:#000;
+  font-weight: bold;
+  font-style: italic;
+}
+#search_input .search_field:focus{
+  box-shadow: none;
+  color: transparent;
+}
+#search_input input[type="text"]::-webkit-input-placeholder {
+  font-weight: bold;
+  color:#000;
+  font-style: italic;
+}
+#search_input .input-group-addon{
+  background: transparent;
+  border:2px solid #90afc5;
+  color: #336b87;
+}
+
+.flip-container {
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+  -ms-transform: perspective(1000px);
+  -moz-transform: perspective(1000px);
+  -moz-transform-style: preserve-3d; 
+  -ms-transform-style: preserve-3d;
   height: 220px;
-  position: relative;
-  -webkit-perspective: 800px;
-  -moz-perspective: 800px;
-  -o-perspective: 800px;
-  -ms-perspective: 800px;
-   perspective: 800px;
-}
-.card img{
-    width: 280px;
-    height: 80%;
-    position: absolute;
-    top: 0; 
-    left: 0;
-    right: 0;
-}
-.card p{
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    margin-bottom: 0px;
-}
-.card p.description{
-    bottom: 25px;
-    position: absolute;
-    margin-bottom: 0px;
-    text-transform: none;
-}
-.car span {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-.card:hover .front{
-  -webkit-transform: rotateY(-180deg);
-  -moz-transform: rotateY(-180deg);
-  -o-transform: rotateY(-180deg);
-  -ms-transform: rotateY(-180deg);
-  transform: rotateY(-180deg);
-}
-.card:hover .back{
+ }
+
+  
+.flip-container:hover .back, .flip-container.hover .back {
   -webkit-transform: rotateY(0deg);
   -moz-transform: rotateY(0deg);
   -o-transform: rotateY(0deg);
   -ms-transform: rotateY(0deg);
   transform: rotateY(0deg);
 }
-.faces{
+
+.flip-container:hover .front, .flip-container.hover .front {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+  
+.flip-container, .front, .back {
+  height: 100%;
+}
+
+.flipper {
+  -webkit-transition: 1s;
+  -webkit-transform-style: preserve-3d;
+  -ms-transition: 1s;
+  -moz-transition: 1s;
+  -moz-transform: perspective(1000px);
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transition: 1s;
+  transform-style: preserve-3d;
+  height: 250px;
+  text-decoration: none;
+  display: block;
+  position: relative;
+}
+
+.front, .back {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: 1s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transition: 1s;
+  -moz-transform-style: preserve-3d;
+  -o-transition: 1s;
+  -o-transform-style: preserve-3d;
+  -ms-transition: 1s;
+  -ms-transform-style: preserve-3d;
+  transition: 1s;
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border:3px solid #000;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.flipper .front p{
+  position: absolute;
+  margin-bottom: 0px;
+  bottom: 0px;
+  width: 100%;
+  background: #0072BB;
+  padding: 10px 0;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.back {
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+.back .back-img{
+  background: rgba(0,0,0,.8);
   position: absolute;
   height: 100%;
   width: 100%;
-  top: 0;
-  left: 0;  
-  -webkit-backface-visibility:hidden;
-  -moz-backface-visibility:hidden;
-  -o-backface-visibility:hidden;
-  -ms-backface-visibility:hidden;
-  backface-visibility: hidden;
-
-  -webkit-transition:1s ease-in-out;
-  -moz-transition:1s ease-in-out;
-  -o-transition:1s ease-in-out;
-  -ms-transition:1s ease-in-out;
-  transition: 1s ease-in-out;
+  z-index: 9;
 }
-.back{
-  -webkit-transform:rotateY(180deg);
-  -moz-transform:rotateY(180deg);
-  -o-transform:rotateY(180deg);
-  -ms-transform:rotateY(180deg);
-  transform: rotateY(180deg);
-
+.back .back-info{
+  background: #0072BB;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  padding: 5px;
+  z-index: 10;
 }
