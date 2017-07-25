@@ -14,12 +14,6 @@
   <!-- Latest Bootstrap compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-  <!-- Stylesheet for the first task -->
-  <link rel="stylesheet" type="text/css" href="assets/css/firstTask.css">
-
-  <!-- Stylesheet for the second task -->
-  <link rel="stylesheet" type="text/css" href="assets/css/secondTask.css">
-
   <!-- Stylesheet for the second task -->
   <link rel="stylesheet" type="text/css" href="assets/css/thirdTask.css">
 
@@ -35,7 +29,7 @@
     <!-- Search input field for data filtering -->
     <form id="search_input">
       <div class="input-group">
-        <input type="text" class="form-control" id="search" placeholder="Search you car">
+        <input type="text" class="form-control" id="search" placeholder="Search you car" onkeyup="filter()">
         <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
       </div>
 
@@ -48,16 +42,14 @@
   
 
  <!-- jQuery library -->
- <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+ <script src="http://code.jquery.com/jquery-3.1.0.js"></script>
 
  <!-- Latest Bootstrap compiled and minified JavaScript -->
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
- <!-- JavaScript for the first task -->
- <script src="assets/js/firstTask.js"></script>
-
   <!-- JavaScript for the second task -->
- <script src="assets/js/secondTask.js"></script>
+ <script src="assets/js/search.js"></script>
+ <script src="assets/js/renderingJsonData.js"></script>
 
 </body>
 
