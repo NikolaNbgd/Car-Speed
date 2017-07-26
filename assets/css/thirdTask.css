@@ -27,7 +27,7 @@ img{
 #search_input{
   width: 600px;
   max-width: 90%;
-  margin: 0px auto 30px;
+
 }
 #search_input input{
   border:2px solid #90afc5;
@@ -37,6 +37,16 @@ img{
   font-weight: bold;
   font-style: italic;
 }
+}
+#search_input input{
+  border:2px solid #90afc5;
+  box-shadow: none;
+  border-right: none;
+  color:#000;
+  font-weight: bold;
+  font-style: italic;
+}
+
 #search_input .search_field:focus{
   box-shadow: none;
   color: transparent;
@@ -62,9 +72,6 @@ img{
   -moz-transform-style: preserve-3d; 
   -ms-transform-style: preserve-3d;
   height: 220px;
-  width: 33.33333%;
-  display: inline;
-  float: left;
  }
 
   
@@ -161,11 +168,4 @@ img{
   bottom: 0;
   padding: 5px;
   z-index: 10;
-}
-
-@media screen and(max-width: 992px){
-  .flip-container{
-    width: 45%;
-    margin: 2.5%;
-  }
 }
