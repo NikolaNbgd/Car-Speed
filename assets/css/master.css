@@ -27,7 +27,7 @@ img{
 #search_input{
   width: 600px;
   max-width: 90%;
-
+  margin:0 auto 30px;
 }
 #search_input input{
   border:2px solid #90afc5;
