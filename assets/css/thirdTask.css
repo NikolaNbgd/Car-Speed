@@ -62,9 +62,6 @@ img{
   -moz-transform-style: preserve-3d; 
   -ms-transform-style: preserve-3d;
   height: 220px;
-  width: 33.33333%;
-  display: inline;
-  float: left;
  }
 
   
@@ -163,9 +160,3 @@ img{
   z-index: 10;
 }
 
-@media screen and(max-width: 992px){
-  .flip-container{
-    width: 45%;
-    margin: 2.5%;
-  }
-}
