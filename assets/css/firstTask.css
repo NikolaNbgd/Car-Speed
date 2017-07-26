@@ -6,9 +6,6 @@ body{
 	border-right: 1px solid #34ACAF;
 	text-align: center;
 	padding: 30px;
-	width: 33.3333%;
-	float: left;
-	display: inline-block;
 }
 .car:last-child{
 	border-bottom: none;
@@ -41,10 +38,3 @@ body{
     display: block;
     margin: 0 auto;
 }
-@media screen and(max-width: 992px){
-	.car{
-		width: 45%;
-		margin: 2.5%;
-	}
-}
-
