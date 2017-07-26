@@ -22,7 +22,7 @@ function renderData(data) {
 
 	//Loop for passing through all data
 	for (i = 0; i < data.cars.length; i++) {
-		carString += '<div class="col-sm-6 col-md-4 car">';
+		carString += '<div class="car">';
 		carString += '<a href="#">';
 		carString += '<img src="'+data.cars[i].image+'">';
 		carString += '<p>'+data.cars[i].name+'</p>';
