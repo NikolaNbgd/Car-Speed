@@ -22,7 +22,7 @@ function renderData(data) {
 
 	//Loop for passing through all data
 	for (i = 0; i < data.cars.length; i++) {
-		carString += '<div class="col-sm-6 col-md-4 car flip-container">';
+		carString += '<div class="flip-container">';
 			carString += '<a href="#" class="flipper">';
 
 				// Default div

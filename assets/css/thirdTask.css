@@ -18,10 +18,10 @@ body{
   border-bottom: none;
 }
 img{
-    width: 100%;
-    display: block;
-    margin: 0 auto;
-    height: 170px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  height: 170px;
 }
 
 #search_input{
@@ -62,6 +62,9 @@ img{
   -moz-transform-style: preserve-3d; 
   -ms-transform-style: preserve-3d;
   height: 220px;
+  width: 33.33333%;
+  display: inline;
+  float: left;
  }
 
   
@@ -74,10 +77,10 @@ img{
 }
 
 .flip-container:hover .front, .flip-container.hover .front {
-    -webkit-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
-    transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
   
 .flip-container, .front, .back {
@@ -98,6 +101,8 @@ img{
   text-decoration: none;
   display: block;
   position: relative;
+  margin: 15px;
+  text-align: center;
 }
 
 .front, .back {
@@ -121,6 +126,7 @@ img{
   border:3px solid #000;
   border-radius: 30px;
   overflow: hidden;
+  width: 100%;
 }
 
 .flipper .front p{
@@ -155,4 +161,11 @@ img{
   bottom: 0;
   padding: 5px;
   z-index: 10;
+}
+
+@media screen and(max-width: 992px){
+  .flip-container{
+    width: 45%;
+    margin: 2.5%;
+  }
 }
