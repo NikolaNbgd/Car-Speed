@@ -4,8 +4,10 @@ $(document).ready(function () {
 		e.preventDefault();
 
 		//Appeding selected images
-		var picture = $(this).next().css('height', '50px');
+		var picture = $(this).next().clone();
+		picture.css('height', '50px');
 		$('#show-data1').find('.scale:first').append(picture);
+		
 
 		//For better user experiance
 		$('html, body').animate({
@@ -20,14 +22,14 @@ $(document).ready(function () {
 		var dist = response.distance;
 
 		//Creating a scale
-		var someDiv1 = '<div class="scale" style="width: '+dist+'px; height: '+dist+'px;"></div>';
-		var someDiv2 = '<div class="scale" style="width: '+dist+'px; height: '+dist+'px;"></div>';
-		var someDiv3 = '<div class="scale" style="width: '+dist+'px; height: '+dist+'px;"></div>';
+		var scale1 = '<div class="scale" style="width: '+dist+'px; height: '+dist+'px;"></div>';
+		var scale2 = '<div class="scale" style="width: '+dist+'px; height: '+dist+'px;"></div>';
+		var scale3 = '<div class="scale" style="width: '+dist+'px; height: '+dist+'px;"></div>';
 
 			for (var i = 0; i < 10; i++) {
-				$('#show-data1').append(someDiv1);
-				$('#show-data2').append(someDiv2);
-				$('#show-data3').append(someDiv3);
+				$('#show-data1').append(scale1);
+				$('#show-data2').append(scale2);
+				$('#show-data3').append(scale3);
 			}
 		
 	});
@@ -38,11 +40,11 @@ $(document).ready(function () {
 		if ( isNaN(speed) || speed.length == "" ) {
 			$('.flash-message').fadeIn();
 		}
-	})
+	});
 
 	$(document).on('click', '.close-message', function (e) {
 		e.preventDefault();
 		$(this).parent().fadeOut();
-	})
+	});
 
 });

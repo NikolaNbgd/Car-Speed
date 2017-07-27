@@ -66,9 +66,9 @@ function filter() {
     for (var i = 0; i < elements.length; i++) {
         
         if (!pattern.test(elements[i].innerHTML.toLowerCase())) {
-            elements[i].parentNode.parentNode.parentNode.style.display = 'none';
+            elements[i].parentNode.style.display = 'none';
         } else {
-            elements[i].parentNode.parentNode.parentNode.style.display = 'block';
+            elements[i].parentNode.style.display = 'block';
         }
     }
 }
