@@ -169,3 +169,78 @@ img{
   padding: 5px;
   z-index: 10;
 }
+.race{
+  margin:40px auto 20px;
+  width: 503px;
+  max-width: 90%;
+}
+.race .action{
+  float: right;
+}
+.grandParent{
+  border: 1px solid #31b0d5;
+  display: inline-block;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.scale{
+  border-bottom: 1px solid #31b0d5;
+  border-right: 1px solid #31b0d5;
+  display: inline-block;
+}
+.parent{
+  line-height: 0.8;
+  border-radius: 5px;
+}
+#show-data3 .scale{
+  border-bottom: none;
+}
+.parent .scale:last-child{
+  border-right: none;
+}
+.race .action input {
+  width: 70px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  height: 30px;
+  margin-right: 10px;
+  padding: 15px;
+  outline: none;
+}
+.race .action .start {
+  background: #31b0d5;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+}
+.measure{
+  padding-left: 35px;
+}
+.measure span{
+    font-size: 18px;
+    margin-right: 14.4px;
+}
+.flash-message{
+  position: fixed;
+  top: 0;
+  background: red;
+  color: #fff;
+  display: none;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  padding:0px 50px;
+  font-size: 18px;
+  z-index: 999;
+}
+.flash-message p{
+   display: inline-block;
+   margin-bottom: 0px;
+}
+.flash-message a{
+  color: #fff;
+  float: right;
+  text-decoration: none;
+}
