@@ -9,8 +9,8 @@ xhr.onreadystatechange = function() {
     	var ourData = JSON.parse(xhr.responseText);
         renderData(ourData);
     }
-
 }
+
 xhr.open('GET', 'data.json', true);
 xhr.send(null);
 

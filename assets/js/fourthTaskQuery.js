@@ -35,7 +35,7 @@ $(document).ready(function () {
 	});
 
 	//Validate input field
-	$(document).on('click', '.start', function () {
+	$(document).on('click', '.action .start', function () {
 		var speed = $('#carSpeed').val();
 		if ( isNaN(speed) || speed.length == "" ) {
 			$('.flash-message').fadeIn();
