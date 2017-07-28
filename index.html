@@ -30,7 +30,7 @@
     <!-- Search input field for data filtering -->
     <form id="search_input">
       <div class="input-group">
-        <input type="text" class="form-control" id="search" placeholder="Search you car" onkeyup="filter()">
+        <input type="text" class="form-control" id="search" placeholder="Search you car" onkeyup="filter();">
         <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
       </div>
 
@@ -38,39 +38,32 @@
 
     <!-- Div in which the json data is stored -->
     <div id="cars" class="clearfix"></div>
-
-
-    <article class="race clearfix">
-    <div class="measure">
-      <span>1xN</span>
-      <span>2xN</span>
-      <span>3xN</span>
-      <span>4xN</span>
-      <span>5xN</span>
-      <span>6xN</span>
-      <span>7xN</span>
-      <span>8xN</span>
-      <span>9xN</span>
-    </div>
-      <div class="grandParent">
-          <div class="parent" id="show-data1"></div>
-          <div class="parent" id="show-data2"></div>
-          <div class="parent" id="show-data3"></div>
-      </div>
-
-      <div class="action">
-        <input type="text" id="carSpeed">
-        <a class="start" href="javascript:void(0)">START</a>
-      </div>
-
-    </article>
-
   </section>
   
-  <div class="flash-message">
-    <p>Input polje je obavezno i uneta vrednost mora biti broj</p>
-    <a href="#" class="close-message">X</a>
-  </div>
+    <section class="race clearfix">
+      <div class="measure">
+        <span>1xN</span>
+        <span>2xN</span>
+        <span>3xN</span>
+        <span>4xN</span>
+        <span>5xN</span>
+        <span>6xN</span>
+        <span>7xN</span>
+        <span>8xN</span>
+        <span>9xN</span>
+      </div>
+        <div class="grandParent">
+            <div class="parent" id="show-data1"></div>
+            <div class="parent" id="show-data2"></div>
+            <div class="parent" id="show-data3"></div>
+        </div>
+
+        <div class="action">
+          <input type="text" id="carSpeed">
+          <a class="start" href="javascript:void(0)">START</a>
+        </div>
+    </section>
+
  <!-- jQuery library -->
  <script src="http://code.jquery.com/jquery-3.1.0.js"></script>
 
