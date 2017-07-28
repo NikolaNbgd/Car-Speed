@@ -1,16 +1,22 @@
-$(document).ready(function () {
+//The filtering function
+function filter() {
 
-	$('#search').keyup(function () {
-    var value = $(this).val().toLowerCase().trim();
+    //The term the user is looking for
+    term = document.getElementById("search").value.toLowerCase();
 
-    $('#cars .car').each(function (index) {
-    	if (!index) return;
-    	$(this).find('p').each(function () {
-    		var id = $(this).text().toLowerCase().trim();
-    		var not_found = (id.indexOf(value) == -1);
-    		$(this).closest('.car').toggle(!not_found);
-    		return not_found;
-    		});
-    	});
-	});
-});
+    //Regular expression term
+    pattern = new RegExp(term);
+
+    //The element that filters the function
+    elements = document.getElementsByTagName("p");
+
+    //The search loop goes through the text on the page and show the filtering cars
+    for (var i = 0; i < elements.length; i++) {
+        
+        if (!pattern.test(elements[i].innerHTML.toLowerCase())) {
+            elements[i].parentNode.style.display = 'none';
+        } else {
+            elements[i].parentNode.style.display = 'block';
+        }
+    }
+}
