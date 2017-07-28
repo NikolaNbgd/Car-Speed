@@ -1,13 +1,16 @@
 $(document).ready(function () {
 
+	//Variable for appending images in different div
+	field = 1;
+
 	$('.flip-container .back').find('.back-img').click(function (e) {
 		e.preventDefault();
 
 		//Appeding selected images
 		var picture = $(this).next().clone();
 		picture.css('height', '50px');
-		$('#show-data1').find('.scale:first').append(picture);
-		
+		$('#show-data'+field).find('.scale:first').append(picture);
+		field +=1
 
 		//For better user experiance
 		$('html, body').animate({
@@ -32,19 +35,6 @@ $(document).ready(function () {
 				$('#show-data3').append(scale3);
 			}
 		
-	});
-
-	//Validate input field
-	$(document).on('click', '.action .start', function () {
-		var speed = $('#carSpeed').val();
-		if ( isNaN(speed) || speed.length == "" ) {
-			$('.flash-message').fadeIn();
-		}
-	});
-
-	$(document).on('click', '.close-message', function (e) {
-		e.preventDefault();
-		$(this).parent().fadeOut();
 	});
 
 });
