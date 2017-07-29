@@ -1,5 +1,5 @@
 body{
-  margin-top: 20px
+  margin: 20px 0px 50px;
 }
 .car{
   border-bottom:1px solid #34ACAF;
@@ -219,8 +219,8 @@ img{
   padding-left: 35px;
 }
 .measure span{
-    font-size: 18px;
-    margin-right: 14.4px;
+  font-size: 18px;
+  margin-right: 14.4px;
 }
 .flash-message{
   position: fixed;
@@ -240,7 +240,11 @@ img{
    margin-bottom: 0px;
 }
 .flash-message a{
-  color: #fff;
-  float: right;
-  text-decoration: none;
+   color: #fff;
+   float: right;
+   text-decoration: none;
+}
+.move{
+  transform: translateX(450px);
+  transition: ;
 }
