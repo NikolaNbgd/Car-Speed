@@ -256,7 +256,7 @@ span.speedLimit {
 @keyframes animate {
   to {
     background-color: red;
-  }
+    }
 }
 .trafficLights{
   width: 40px;
@@ -296,5 +296,4 @@ span.speedLimit {
 .hr-3x{
   top: -7px;
   left: 274px;
-
 }
