@@ -34,7 +34,7 @@ function renderData(data) {
 				// Div on hover
 				carString += '<div class="back">';
 					carString += '<div class="back-img"></div>';
-					carString += '<img src="'+data.cars[i].image+'">';
+					carString += '<img id="'+ i +'" src="'+data.cars[i].image+'">';
 					carString += '<div class="back-info">';
 					carString += '<p>'+data.cars[i].description+'</p>';
 					carString += '<span>Max speed: '+data.cars[i].speed+' km/h</span>';

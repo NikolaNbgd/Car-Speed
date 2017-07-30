@@ -1,100 +1,120 @@
 $(document).ready(function () {
 
-	//Counder for appending cars in different field
-	fieldNumber = 1;
+    //An empty array in which cars id are being pushed
+    var carArr = [];
 
-	$('.flip-container .back').find('.back-img').click(function (e) {
-		e.preventDefault();
+    //Json data
+    var data;
 
-		//Appeding selected images
-		var picture = $(this).next().clone();
-		picture.css('height', '50px');
-		$('#show-data'+fieldNumber).find('.scale:first').append(picture);
-		fieldNumber+=1;
+    $.getJSON('data.json', function (response) {
+        data = response;
+    })
 
-		//For better user experiance
-		$('html, body').animate({
-	        scrollTop: $("#show-data1").offset().top
-	    }, 1500);
+    //Counder for appending cars in different field
+    fieldNumber = 1;
 
-	});
+    // Function for appending picture
+    $('.flip-container .back').find('.back-img').click(function (e) {
+        e.preventDefault();
 
-	// field = 1;
-	$(document).on('click', '.start', function () {
+        if (carArr.length < 3) {
 
-		// var ss = $('#show-data' + field).find('.scale:first');
-		// field+=1;
-		// 	if (ss.has('img')) {
-		// 		for (var i = 0; i < ss.length; i++) {
-		// 			ss.find('img').each(function () {
-		// 				$(this).addClass('move');
-		// 			})
+            carArr.push($(this).next().clone().attr('id'));
 
-		// 		}
-		// 	}
-	
-			// index = 0;
-			// carSpeeds = 0;
-			$.getJSON('data.json', function (response) {
-				$.each(response.cars, function (r,car) {
-					// $('.grandParent').find('img:eq('+index+')').css({
-					// 	'transform' : 'translateX(450px)',
-					// 	'transition' : '1s'
-					// 	// 'transition' : '.'+car+'s'
-					// });
-					// index++;
-					// carSpeeds++;
-					// console.log(car);
+            // Cloning picture on click
+            var picture = $(this).next().clone();
+            picture.css('height', '50px');
+
+            //Appending picure on click
+            $('#show-data' + fieldNumber).find('.scale:first').append(picture);
+            fieldNumber += 1;
+
+            //For better user experiance
+            $('html, body').animate({
+                scrollTop: $("#show-data1").offset().top
+            }, 1500);
+        }
+
+    });
+
+    //Function that triggers the race on click
+    $(document).on('click', '.start', function () {
+
+        var elem = [];
+        var carOne;
+        var carTwo;
+        var carThree;
+        var helparr = []
+
+        for (var i = 0; i < 3; i++) {
+            elem.push(data.cars[carArr[i]]);
+            helparr.push(data.cars[carArr[i]].speed)
+        }
+
+        //Here sorts the speeds from the smallest to the highest and depending on which background color it will depend on
+        // Checked in if, and else-if down below
+        helparr = helparr.sort();
+
+        // The essence is in this: 450 / (data.cars[carArr[0]].speed)) * 1000
+        // The faster car will finish the animation first
+        $("#show-data1 .scale img").animate({
+            left: "450"
+        }, (450 / (data.cars[carArr[0]].speed)) * 1000, function () {
+
+            //Colors are assigned here, depending on the position
+            if (data.cars[carArr[0]].speed === helparr[0]) {
+                carOne = "#cc6633"
+            } else if (data.cars[carArr[0]].speed === helparr[1]) {
+                carOne = "#C0C0C0"
+            } else {
+                carOne = "#FFD700"
+            }
+            $("#show-data1").css('background-color', carOne);
+        });
+
+        $("#show-data2 .scale img").animate({
+            left: "450"
+        }, (450 / (data.cars[carArr[1]].speed)) * 1000, function () {
+            if (data.cars[carArr[1]].speed === helparr[0]) {
+                carTwo = "#cc6633"
+            } else if (data.cars[carArr[1]].speed === helparr[1]) {
+                carTwo = "#C0C0C0"
+            } else {
+                carTwo = "#FFD700"
+            }
+            $("#show-data2").css('background-color', carTwo)
+        });
+
+        $("#show-data3 .scale img").animate({
+            left: "450"
+        }, (450 / (data.cars[carArr[2]].speed)) * 1000, function () {
+            if (data.cars[carArr[2]].speed === helparr[0]) {
+                carThree = "#cc6633"
+            } else if (data.cars[carArr[2]].speed === helparr[1]) {
+                carThree = "#C0C0C0"
+            } else {
+                carThree = "#FFD700"
+            }
+            $("#show-data3").css('background-color', carThree)
+        });
+    });
 
 
+    $.getJSON('data.json', function (response) {
 
-				})
-			})
-		});
+        //Variable for distance value
+        var dist = response.distance;
 
-	//Static ajax call for calculating speed for each car
-	$.post('data.json', function (data) {
-		for (var i = 0; i < data.cars.length; i++) {
+        //Creating a scale
+        var scale1 = '<div class="scale" style="width: ' + dist + 'px; height: ' + dist + 'px;"></div>';
+        var scale2 = '<div class="scale" style="width: ' + dist + 'px; height: ' + dist + 'px;"></div>';
+        var scale3 = '<div class="scale" style="width: ' + dist + 'px; height: ' + dist + 'px;"></div>';
 
-			var finalPutno = 450 / ((data.cars[0].speed * 1000) / 3600);
-			var finalMazda = 450 / ((data.cars[1].speed * 1000) / 3600);
-			var finalMercedes = 450 / ((data.cars[2].speed * 1000) / 3600);
-			var finalHonda = 450 / ((data.cars[3].speed * 1000) / 3600);
-			var finalSmart = 450 / ((data.cars[4].speed * 1000) / 3600);
+        for (var i = 0; i < 10; i++) {
+            $('#show-data1').append(scale1);
+            $('#show-data2').append(scale2);
+            $('#show-data3').append(scale3);
+        }
 
-
-		}
-	})
-
-	$.getJSON('data.json', function (response) {
-
-		//Variable for distance value
-		var dist = response.distance;
-
-		//Creating a scale
-		var scale1 = '<div class="scale" style="width: '+dist+'px; height: '+dist+'px;"></div>';
-		var scale2 = '<div class="scale" style="width: '+dist+'px; height: '+dist+'px;"></div>';
-		var scale3 = '<div class="scale" style="width: '+dist+'px; height: '+dist+'px;"></div>';
-
-			for (var i = 0; i < 10; i++) {
-				$('#show-data1').append(scale1);
-				$('#show-data2').append(scale2);
-				$('#show-data3').append(scale3);
-			}
-		
-	});
-
-	//Validate input field
-	// $(document).on('click', '.action .start', function () {
-	// 	var speed = $('#carSpeed').val();
-	// 	if ( isNaN(speed) || speed.length == "" ) {
-	// 		$('.flash-message').fadeIn();
-	// 	}
-	// });
-
-	// $(document).on('click', '.close-message', function (e) {
-	// 	e.preventDefault();
-	// 	$(this).parent().fadeOut();
-	// });
-
+    });
 });
